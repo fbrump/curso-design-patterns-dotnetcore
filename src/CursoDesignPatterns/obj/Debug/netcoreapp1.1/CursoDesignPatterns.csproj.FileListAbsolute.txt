@@ -1,0 +1,8 @@
+/Users/Brum/Documents/work/_git/alura-csharp-design-patterns/src/CursoDesignPatterns/bin/Debug/netcoreapp1.1/CursoDesignPatterns.deps.json
+/Users/Brum/Documents/work/_git/alura-csharp-design-patterns/src/CursoDesignPatterns/bin/Debug/netcoreapp1.1/CursoDesignPatterns.runtimeconfig.json
+/Users/Brum/Documents/work/_git/alura-csharp-design-patterns/src/CursoDesignPatterns/bin/Debug/netcoreapp1.1/CursoDesignPatterns.runtimeconfig.dev.json
+/Users/Brum/Documents/work/_git/alura-csharp-design-patterns/src/CursoDesignPatterns/bin/Debug/netcoreapp1.1/CursoDesignPatterns.dll
+/Users/Brum/Documents/work/_git/alura-csharp-design-patterns/src/CursoDesignPatterns/bin/Debug/netcoreapp1.1/CursoDesignPatterns.pdb
+/Users/Brum/Documents/work/_git/alura-csharp-design-patterns/src/CursoDesignPatterns/obj/Debug/netcoreapp1.1/CursoDesignPatterns.AssemblyInfo.cs
+/Users/Brum/Documents/work/_git/alura-csharp-design-patterns/src/CursoDesignPatterns/obj/Debug/netcoreapp1.1/CursoDesignPatterns.dll
+/Users/Brum/Documents/work/_git/alura-csharp-design-patterns/src/CursoDesignPatterns/obj/Debug/netcoreapp1.1/CursoDesignPatterns.pdb
