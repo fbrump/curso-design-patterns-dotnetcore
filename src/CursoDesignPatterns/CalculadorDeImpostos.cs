@@ -13,11 +13,11 @@ namespace CursoDesignPatterns
         public void RealizaCalculo(Orcamento orcamento, string imposto)
         {
             if ("ICMS".Equals(imposto)){
-                double icms = orcamento.Valor * 0.1;
+                double icms = new ICMS().CalculaICMS(orcamento);
                 Console.WriteLine(icms);
             }
             else if ("ISS".Equals(imposto)){
-                double iss = orcamento.Valor * 0.06;
+                double iss = new ISS().CalculaISS(orcamento);
                 Console.WriteLine(iss);
             }
         }
