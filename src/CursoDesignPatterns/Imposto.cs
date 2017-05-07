@@ -1,18 +1,15 @@
 namespace CursoDesignPatterns
 {
     /// <summary>
-    /// Class with business of ICMS Tax.
+    /// Interface with necessary methods for Tax
     /// </summary>
-    public class ICMS : Imposto
+    public interface Imposto
     {
         /// <summary>
-        /// Method that calculate ICMS Tax.
+        /// Method that calculate Tax.
         /// </summary>
         /// <param name="orcamento">Budget</param>
         /// <returns>Value with tax applied</returns>
-        public double Calcula(Orcamento orcamento)
-        {
-            return orcamento.Valor * 0.1;
-        }
+         double Calcula(Orcamento orcamento);
     }
 }

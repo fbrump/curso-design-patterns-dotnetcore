@@ -10,20 +10,10 @@ namespace CursoDesignPatterns
         /// Method that perform calculation ICMS.
         /// </summary>
         /// <param name="orcamento">Budget</param>
-        public void RealizaCalculoICMS(Orcamento orcamento)
+        public void RealizaCalculo(Orcamento orcamento, Imposto imposto)
         {
-            double icms = new ICMS().CalculaICMS(orcamento);
+            double icms = imposto.Calcula(orcamento);
             Console.WriteLine(icms);
-        }
-
-        /// <summary>
-        /// Method that perform calculation ISS.
-        /// </summary>
-        /// <param name="orcamento">Budget</param>
-        public void RealizaCalculoISS(Orcamento orcamento)
-        {
-            double iss = new ISS().CalculaISS(orcamento);
-            Console.WriteLine(iss);
         }
     }
 }
