@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace CursoDesignPatterns
+﻿namespace CursoDesignPatterns
 {
+    using System;
+    
     class Program
     {
         static void Main(string[] args)
