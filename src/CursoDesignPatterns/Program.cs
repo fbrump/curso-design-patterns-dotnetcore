@@ -13,6 +13,7 @@ namespace CursoDesignPatterns
 
             CalculadorDeImpostos calculador = new CalculadorDeImpostos();
 
+            calculador.RealizaCalculo(orcamento, icms);
             calculador.RealizaCalculo(orcamento, iss);
         }
     }
