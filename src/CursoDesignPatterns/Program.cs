@@ -17,6 +17,14 @@
             calculador.RealizaCalculo(orcamento, icms);
             calculador.RealizaCalculo(orcamento, iss);
             calculador.RealizaCalculo(orcamento, iccc);
+
+            RealizadorDeInvestimentos realizador = new RealizadorDeInvestimentos();
+            Conta conta = new Conta();
+            Investimento investimento = new Arrojado();
+            
+            conta.Deposita(500);
+
+            realizador.Realiza(conta, investimento);
         }
     }
 }
