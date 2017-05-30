@@ -1,7 +1,6 @@
-using System;
-
 namespace CursoDesignPatterns
 {
+    using System;
     public class DescontoPorCincoItens : Desconto
     {
         public Desconto Proximo { get; set; }
