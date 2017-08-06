@@ -2,6 +2,7 @@ namespace CursoDesignPatterns.Builder
 {
     using System;
     using System.Collections.Generic;
+    using CursoDesignPatterns.Observer;
     using CursoDesignPatterns.Venda;
 
     public class CriadorDeNotaFiscal
@@ -23,26 +24,11 @@ namespace CursoDesignPatterns.Builder
         {
             var nf =  new NotaFiscal(RazaoSocial, Cnpj, Data, ValorBruto, Impostos, TodosItens, Observacoes);
 
-            enviaPorEmail(nf);
-            salvaNoBanco(nf);
-            enviaPorSms(nf);
+            new EnviadorDeEmail().EnviaPorEmail(nf);
+            new NotaFiscalDao().SalvaNoBanco(nf);
+            new EnviadorDeSms().EnviaPorSms(nf);
 
             return nf;
-        }
-
-        private void enviaPorEmail(NotaFiscal nf)
-        {
-            Console.WriteLine("Simula - Envia por e-mail");
-        }
-
-        private void salvaNoBanco(NotaFiscal nf)
-        {
-            Console.WriteLine("Simula - Salva no banco.");
-        }
-
-        private void enviaPorSms(NotaFiscal nf)
-        {
-            Console.WriteLine("Simula - Envia por SMS.");
         }
 
         public CriadorDeNotaFiscal ParaEmpresa(String razaoSocial) 
