@@ -30,7 +30,7 @@
             realizador.Realiza(conta, investimento);
             */
 
-            /* NOTE: DESCONTO */
+            /* NOTE: DESCONTO 
 
             CalculadorDeDescontos calculadorDesconto = new CalculadorDeDescontos();
 
@@ -45,7 +45,9 @@
 
             double desconto = calculadorDesconto.Calcula(orcamento);
 
-            Console.WriteLine(desconto);
+            Console.WriteLine(desconto);*/
+
+            
         }
     }
 }
