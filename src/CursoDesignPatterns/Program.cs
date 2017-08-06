@@ -47,6 +47,7 @@
 
             Console.WriteLine(desconto);*/
 
+            /* NOTE: Decorate
             Imposto impostoComplexo = new ISS(new ICMS());
 
             Orcamento orcamento = new Orcamento(500.0);
@@ -54,7 +55,20 @@
             double valor = impostoComplexo.Calcula(orcamento);
 
             Console.WriteLine(valor);
+            */
 
+            Orcamento reforma = new Orcamento(500.0);
+
+            reforma.AplicaDescontoExtra();
+            Console.WriteLine(reforma.Valor); // imprime 475,00 pois descontou 5%
+            reforma.Aprova(); // aprova nota!
+            reforma.Aprova(); // gera erro!
+
+            reforma.AplicaDescontoExtra();
+            Console.WriteLine(reforma.Valor); // imprime 465,50 pois descontou 2%
+
+            reforma.Finaliza();
+            
         }
     }
 }
