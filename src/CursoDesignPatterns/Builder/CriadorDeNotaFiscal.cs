@@ -21,8 +21,16 @@ namespace CursoDesignPatterns.Builder
 
         public NotaFiscal Constroi() 
         {
-            return new NotaFiscal(RazaoSocial, Cnpj, Data, ValorBruto, Impostos, TodosItens, Observacoes);
+            var nf =  new NotaFiscal(RazaoSocial, Cnpj, Data, ValorBruto, Impostos, TodosItens, Observacoes);
+
+            enviaPorEmail(nf);
+            salvaNoBanco(nf);
+            enivaPorSmd(nf);
+
+            return nf;
         }
+
+        
 
         public CriadorDeNotaFiscal ParaEmpresa(String razaoSocial) 
         {
