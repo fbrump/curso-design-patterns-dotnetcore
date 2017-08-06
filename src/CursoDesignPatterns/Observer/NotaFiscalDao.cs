@@ -2,10 +2,11 @@ namespace CursoDesignPatterns.Observer
 {
     using System;
     using Venda;
+    using Interface;
 
-    public class NotaFiscalDao
+    public class NotaFiscalDao : IAcaoAposGerarNota
     {
-        public void SalvaNoBanco(NotaFiscal nf)
+        public void Executa(NotaFiscal nf)
         {
             Console.WriteLine("Simula - Salva no banco.");
         }

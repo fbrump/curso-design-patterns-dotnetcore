@@ -2,10 +2,11 @@ namespace CursoDesignPatterns.Observer
 {
     using System;
     using Venda;
+    using Interface;
 
-    public class EnviadorDeSms
+    public class EnviadorDeSms : IAcaoAposGerarNota
     {
-        internal void EnviaPorSms(NotaFiscal nf)
+        public void Executa(NotaFiscal nf)
         {
             Console.WriteLine("Simula - Envia por SMS.");
         }
