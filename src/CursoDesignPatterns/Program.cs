@@ -1,6 +1,8 @@
 ﻿namespace CursoDesignPatterns
 {
     using System;
+    using CursoDesignPatterns.Builder;
+    using CursoDesignPatterns.Venda;
 
     class Program
     {
@@ -57,6 +59,7 @@
             Console.WriteLine(valor);
             */
 
+            /* NOTE:
             Orcamento reforma = new Orcamento(500.0);
 
             reforma.AplicaDescontoExtra();
@@ -68,7 +71,44 @@
             Console.WriteLine(reforma.Valor); // imprime 465,50 pois descontou 2%
 
             reforma.Finaliza();
+            */
+
+            // CriadorDeNotaFiscal criador = new CriadorDeNotaFiscal();
+            // criador.ParaEmpresa("Caelum");
+            // criador.ComCnpj("123.456.789/0001-10");
+            // criador.ComItem(new ItemDaNota("item 1", 100.0));
+            // criador.ComItem(new ItemDaNota("item 2", 200.0));
+            // criador.ComItem(new ItemDaNota("item 3", 300.0));
             
+            // CriadorDeNotaFiscal criador = new CriadorDeNotaFiscal();
+            // criador.ParaEmpresa("Caelum");
+            // criador.ComCnpj("123.456.789/0001-10");
+            // criador.ComItem(new ItemDaNota("item 1", 100.0));
+            // criador.ComItem(new ItemDaNota("item 2", 200.0));
+            // criador.ComItem(new ItemDaNota("item 3", 300.0));
+            // criador.ComObservacoes("entregar nf pessoalmente");
+            // criador.NaDataAtual();
+
+            // CriadorDeNotaFiscal criador = new CriadorDeNotaFiscal();
+
+            // criador.ParaEmpresa("Caelum");
+            // criador.ComCnpj("123.456.789/0001-10");
+            // criador.ComItem(new ItemDaNota("item 1", 100.0));
+            // criador.ComItem(new ItemDaNota("item 2", 200.0));
+            // criador.ComItem(new ItemDaNota("item 3", 300.0));
+            // criador.ComObservacoes("entregar nf pessoalmente");
+            // criador.NaDataAtual();
+
+            // NotaFiscal nf = criador.Constroi();
+
+            NotaFiscal nf = new CriadorDeNotaFiscal().ParaEmpresa("Caelum")
+                          .ComCnpj("123.456.789/0001-10")
+                          .ComItem(new ItemDaNota("item 1", 100.0))
+                          .ComItem(new ItemDaNota("item 2", 200.0))
+                          .ComItem(new ItemDaNota("item 3", 300.0))
+                          .ComObservacoes("entregar nf pessoalmente")
+                          .NaDataAtual()
+                          .Constroi();
         }
     }
 }
