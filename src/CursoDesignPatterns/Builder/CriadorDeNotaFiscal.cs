@@ -32,17 +32,17 @@ namespace CursoDesignPatterns.Builder
 
         private void enviaPorEmail(NotaFiscal nf)
         {
-            Console.WriteLine("Envia por e-mail");
+            Console.WriteLine("Simula - Envia por e-mail");
         }
 
         private void salvaNoBanco(NotaFiscal nf)
         {
-            Console.WriteLine("Salva no banco.");
+            Console.WriteLine("Simula - Salva no banco.");
         }
 
         private void enviaPorSms(NotaFiscal nf)
         {
-            Console.WriteLine("Envia por SMS.");
+            Console.WriteLine("Simula - Envia por SMS.");
         }
 
         public CriadorDeNotaFiscal ParaEmpresa(String razaoSocial) 
