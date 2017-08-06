@@ -45,7 +45,7 @@ namespace CursoDesignPatterns.Builder
             return this;
         }
 
-        public CriadorDeNotaFiscal ComItem(ItemDaNota item) 
+        public CriadorDeNotaFiscal Com(ItemDaNota item) 
         {
             TodosItens.Add(item);
             ValorBruto += item.Valor;
