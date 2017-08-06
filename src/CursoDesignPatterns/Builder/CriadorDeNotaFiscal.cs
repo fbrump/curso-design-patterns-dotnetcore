@@ -14,6 +14,11 @@ namespace CursoDesignPatterns.Builder
         private String Observacoes { get; set; }
         private IList<ItemDaNota> TodosItens = new List<ItemDaNota>();
 
+        public CriadorDeNotaFiscal()
+        {
+            this.Data = DateTime.Now;
+        }
+
         public NotaFiscal Constroi() 
         {
             return new NotaFiscal(RazaoSocial, Cnpj, Data, ValorBruto, Impostos, TodosItens, Observacoes);
@@ -49,9 +54,9 @@ namespace CursoDesignPatterns.Builder
             return this;
         }
 
-        public CriadorDeNotaFiscal NaDataAtual() 
+        public CriadorDeNotaFiscal NaData(DateTime data) 
         {
-            this.Data = DateTime.Now;
+            this.Data = data;
 
             return this;
         }
