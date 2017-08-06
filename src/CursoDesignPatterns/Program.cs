@@ -107,7 +107,7 @@
                           .ComItem(new ItemDaNota("item 2", 200.0))
                           .ComItem(new ItemDaNota("item 3", 300.0))
                           .ComObservacoes("entregar nf pessoalmente")
-                          .NaDataAtual()
+                          //.NaDataAtual()
                           .Constroi();
         }
     }
