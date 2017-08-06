@@ -4,6 +4,7 @@ namespace CursoDesignPatterns
      {
 
          public ICPP(Imposto outroImposto) : base(outroImposto) { }
+         public ICPP() : base() { }
 
         public override bool DeveUsarMaximaTaxacao(Orcamento orcamento) => orcamento.Valor >= 500;
         public override double MaximaTaxacao(Orcamento orcamento) => orcamento.Valor * 0.07;
