@@ -2,6 +2,7 @@
 {
     using System;
     using CursoDesignPatterns.Builder;
+    using CursoDesignPatterns.Observer;
     using CursoDesignPatterns.Venda;
 
     class Program
@@ -101,14 +102,19 @@
 
             // NotaFiscal nf = criador.Constroi();
 
-            NotaFiscal nf = new CriadorDeNotaFiscal().ParaEmpresa("Caelum")
+            var criador = new CriadorDeNotaFiscal();
+            criador.ParaEmpresa("Caelum")
                           .ComCnpj("123.456.789/0001-10")
                           .Com(new ItemDaNota("item 1", 100.0))
                           .Com(new ItemDaNota("item 2", 200.0))
                           .Com(new ItemDaNota("item 3", 300.0))
-                          .ComObservacoes("entregar nf pessoalmente")
-                          //.NaDataAtual()
-                          .Constroi();
+                          .ComObservacoes("entregar nf pessoalmente");
+            
+            criador.AdicionarAcao(new EnviadorDeEmail());
+            criador.AdicionarAcao(new NotaFiscalDao());
+            criador.AdicionarAcao(new EnviadorDeSms());
+
+            NotaFiscal nf = criador.Constroi();
         }
     }
 }
