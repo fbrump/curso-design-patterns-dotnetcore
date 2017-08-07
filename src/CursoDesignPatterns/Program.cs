@@ -1,9 +1,11 @@
 ﻿namespace CursoDesignPatterns
 {
     using System;
-    using CursoDesignPatterns.Builder;
-    using CursoDesignPatterns.Observer;
-    using CursoDesignPatterns.Venda;
+    using System.Collections.Generic;
+    using Builder;
+    using Interface;
+    using Observer;
+    using Venda;
 
     class Program
     {
@@ -102,18 +104,21 @@
 
             // NotaFiscal nf = criador.Constroi();
 
-            var criador = new CriadorDeNotaFiscal();
+            var acoes = new List<IAcaoAposGerarNota>();
+
+            acoes.Add(new EnviadorDeEmail());
+            acoes.Add(new NotaFiscalDao());
+            acoes.Add(new EnviadorDeSms());
+            acoes.Add(new Multiplicador(5));
+
+            var criador = new CriadorDeNotaFiscal(acoes);
+
             criador.ParaEmpresa("Caelum")
                           .ComCnpj("123.456.789/0001-10")
                           .Com(new ItemDaNota("item 1", 100.0))
                           .Com(new ItemDaNota("item 2", 200.0))
                           .Com(new ItemDaNota("item 3", 300.0))
                           .ComObservacoes("entregar nf pessoalmente");
-            
-            criador.AdicionarAcao(new EnviadorDeEmail());
-            criador.AdicionarAcao(new NotaFiscalDao());
-            criador.AdicionarAcao(new EnviadorDeSms());
-            criador.AdicionarAcao(new Multiplicador(5));
 
             NotaFiscal nf = criador.Constroi();
         }

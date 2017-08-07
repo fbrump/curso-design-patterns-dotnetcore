@@ -16,9 +16,10 @@ namespace CursoDesignPatterns.Builder
         private String Observacoes { get; set; }
         private IList<ItemDaNota> TodosItens = new List<ItemDaNota>();
 
-        public CriadorDeNotaFiscal()
+        public CriadorDeNotaFiscal(IList<IAcaoAposGerarNota> acoes)
         {
             this.Data = DateTime.Now;
+            this.todasAcoesASeremExecutadas = acoes;
         }
 
         private IList<IAcaoAposGerarNota> todasAcoesASeremExecutadas = new List<IAcaoAposGerarNota>();
@@ -32,9 +33,6 @@ namespace CursoDesignPatterns.Builder
 
             return nf;
         }
-
-        public void AdicionarAcao(IAcaoAposGerarNota acaoNova)
-            => this.todasAcoesASeremExecutadas.Add(acaoNova);
 
         public CriadorDeNotaFiscal ParaEmpresa(String razaoSocial) 
         {
