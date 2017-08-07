@@ -113,6 +113,7 @@
             criador.AdicionarAcao(new EnviadorDeEmail());
             criador.AdicionarAcao(new NotaFiscalDao());
             criador.AdicionarAcao(new EnviadorDeSms());
+            criador.AdicionarAcao(new Multiplicador(5));
 
             NotaFiscal nf = criador.Constroi();
         }
