@@ -2,8 +2,9 @@ namespace CursoDesignPatterns.Builder
 {
     using System;
     using System.Collections.Generic;
-    using CursoDesignPatterns.Observer;
-    using CursoDesignPatterns.Venda;
+    using Interface;
+    using Observer;
+    using Venda;
 
     public class CriadorDeNotaFiscal
     {
@@ -20,16 +21,20 @@ namespace CursoDesignPatterns.Builder
             this.Data = DateTime.Now;
         }
 
+        private IList<IAcaoAposGerarNota> todasAcoesASeremExecutadas = new List<IAcaoAposGerarNota>();
+
         public NotaFiscal Constroi() 
         {
             var nf =  new NotaFiscal(RazaoSocial, Cnpj, Data, ValorBruto, Impostos, TodosItens, Observacoes);
 
-            new EnviadorDeEmail().EnviaPorEmail(nf);
-            new NotaFiscalDao().SalvaNoBanco(nf);
-            new EnviadorDeSms().EnviaPorSms(nf);
+            foreach (var acao in todasAcoesASeremExecutadas)
+                acao.Executa(nf);
 
             return nf;
         }
+
+        public void AdicionarAcao(IAcaoAposGerarNota acaoNova)
+            => this.todasAcoesASeremExecutadas.Add(acaoNova);
 
         public CriadorDeNotaFiscal ParaEmpresa(String razaoSocial) 
         {
